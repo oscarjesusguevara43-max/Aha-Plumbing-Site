@@ -24,9 +24,17 @@ export default function Navbar() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
       setIsOpen(false);
     }
   };
@@ -41,7 +49,7 @@ export default function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => scrollToSection(e, "#home")}
-          className="text-2xl font-bold font-heading flex items-center gap-2"
+          className="text-xl md:text-2xl font-bold font-heading flex items-center gap-2"
         >
            <span className={`${isScrolled ? "text-primary" : "text-white"} transition-colors`}>
              Aha Plumbing & Heating
@@ -74,16 +82,21 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <X className={isScrolled ? "text-primary" : "text-white"} />
-          ) : (
-            <Menu className={isScrolled ? "text-primary" : "text-white"} />
-          )}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+           <a href="tel:6047800790" className={`p-2 rounded-full ${isScrolled ? "bg-accent text-white" : "bg-white text-accent"}`}>
+             <Phone className="w-5 h-5" />
+           </a>
+           <button
+            className="p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <X className={isScrolled ? "text-primary" : "text-white"} />
+            ) : (
+              <Menu className={isScrolled ? "text-primary" : "text-white"} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -94,14 +107,16 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="text-foreground font-medium py-2 border-b border-gray-100 last:border-0"
+              className="text-foreground font-medium py-3 border-b border-gray-100 last:border-0"
             >
               {link.name}
             </a>
           ))}
-          <Button className="w-full bg-accent hover:bg-accent/90 text-white" asChild>
-            <a href="tel:6047800790">Call Now</a>
-          </Button>
+          <div className="pt-2">
+            <Button className="w-full bg-accent hover:bg-accent/90 text-white h-12" asChild>
+              <a href="tel:6047800790">Call (604) 780-0790</a>
+            </Button>
+          </div>
         </div>
       )}
     </nav>
