@@ -6,19 +6,19 @@ export default function Testimonials() {
     {
       name: "Laura M.",
       location: "Surrey, BC",
-      text: "Llamé por una fuga de agua y llegaron en menos de 30 minutos. Muy profesionales y amables. ¡Recomendados 100%!",
+      text: "I called about a water leak and they arrived in less than 30 minutes. Very professional and friendly. 100% recommended!",
       rating: 5,
     },
     {
       name: "Carlos R.",
       location: "Langley, BC",
-      text: "Excelente servicio. Instalaron mi nuevo calentador de agua rápidamente y dejaron todo impecable. El precio fue muy justo.",
+      text: "Excellent service. They installed my new water heater quickly and left everything spotless. The price was very fair.",
       rating: 5,
     },
     {
       name: "Sarah J.",
       location: "Delta, BC",
-      text: "Tuve una emergencia con la calefacción en pleno invierno y Aha Plumbing me salvó. Llegaron tarde en la noche y lo arreglaron todo.",
+      text: "I had a heating emergency in the middle of winter and Aha Plumbing saved me. They arrived late at night and fixed everything.",
       rating: 5,
     }
   ];
@@ -30,12 +30,12 @@ export default function Testimonials() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent-foreground/80 font-bold tracking-wider uppercase text-sm">Testimonios</span>
+          <span className="text-accent-foreground/80 font-bold tracking-wider uppercase text-sm">Testimonials</span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mt-2 mb-4">
-            Lo Que Dicen Nuestros Clientes
+            What Our Customers Say
           </h2>
           <p className="text-blue-100 text-lg">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación.
+            Our customers' satisfaction is our best introduction.
           </p>
         </div>
 

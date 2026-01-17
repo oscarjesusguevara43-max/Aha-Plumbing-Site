@@ -7,38 +7,38 @@ import heatingImage from "@assets/stock_images/hvac_heating_system__e8090d9a.jpg
 export default function Services() {
   const services = [
     {
-      title: "Reparación de Fugas",
-      description: "Detección y reparación rápida de fugas de agua para evitar daños mayores en su hogar.",
+      title: "Leak Repair",
+      description: "Fast detection and repair of water leaks to prevent major damage to your home.",
       icon: Droplets,
       image: leakImage,
     },
     {
-      title: "Calentadores de Agua",
-      description: "Instalación, reparación y mantenimiento de calentadores de agua tradicionales y sin tanque.",
+      title: "Water Heaters",
+      description: "Installation, repair, and maintenance of traditional and tankless water heaters.",
       icon: Flame,
       image: heaterImage,
     },
     {
-      title: "Sistemas de Calefacción",
-      description: "Servicio experto para calderas y sistemas de calefacción central para mantener su hogar cálido.",
+      title: "Heating Systems",
+      description: "Expert service for boilers and central heating systems to keep your home warm.",
       icon: Wrench,
       image: heatingImage,
     },
     {
-      title: "Emergencias 24/7",
-      description: "Disponibles a cualquier hora, cualquier día. Cuando ocurre un desastre, estamos aquí.",
+      title: "24/7 Emergencies",
+      description: "Available any time, any day. When disaster strikes, we are here for you.",
       icon: Clock,
-      image: null, // Style differently
+      image: null,
     },
     {
-      title: "Mantenimiento Preventivo",
-      description: "Revisiones periódicas para asegurar que sus sistemas funcionen eficientemente todo el año.",
+      title: "Preventive Maintenance",
+      description: "Periodic checkups to ensure your systems run efficiently all year round.",
       icon: ShieldCheck,
       image: null,
     },
     {
-      title: "Instalaciones Generales",
-      description: "Desde grifos hasta inodoros y tuberías nuevas, nos encargamos de todas sus instalaciones.",
+      title: "General Installations",
+      description: "From faucets to toilets and new piping, we handle all your installations.",
       icon: PenTool,
       image: null,
     },
@@ -48,12 +48,12 @@ export default function Services() {
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-bold tracking-wider uppercase text-sm">Nuestros Servicios</span>
+          <span className="text-accent font-bold tracking-wider uppercase text-sm">Our Services</span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mt-2 mb-4">
-            Soluciones Integrales para su Hogar
+            Comprehensive Solutions for Your Home
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ofrecemos una amplia gama de servicios de plomería y calefacción, respaldados por nuestra experiencia y compromiso con la calidad.
+            We offer a wide range of plumbing and heating services, backed by our experience and commitment to quality.
           </p>
         </div>
 

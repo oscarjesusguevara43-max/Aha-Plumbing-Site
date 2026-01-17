@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,11 +15,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Inicio", href: "#home" },
-    { name: "Servicios", href: "#services" },
-    { name: "Sobre Nosotros", href: "#about" },
-    { name: "Testimonios", href: "#testimonials" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "About Us", href: "#about" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -39,8 +38,11 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold font-heading flex items-center gap-2">
-           {/* Logo placeholder - using text for now or simple icon */}
+        <a 
+          href="#home" 
+          onClick={(e) => scrollToSection(e, "#home")}
+          className="text-2xl font-bold font-heading flex items-center gap-2"
+        >
            <span className={`${isScrolled ? "text-primary" : "text-white"} transition-colors`}>
              Aha Plumbing & Heating
            </span>
@@ -73,10 +75,14 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className={isScrolled ? "text-primary" : "text-white"} /> : <Menu className={isScrolled ? "text-primary" : "text-white"} />}
+          {isOpen ? (
+            <X className={isScrolled ? "text-primary" : "text-white"} />
+          ) : (
+            <Menu className={isScrolled ? "text-primary" : "text-white"} />
+          )}
         </button>
       </div>
 
@@ -94,7 +100,7 @@ export default function Navbar() {
             </a>
           ))}
           <Button className="w-full bg-accent hover:bg-accent/90 text-white" asChild>
-            <a href="tel:6047800790">Llamar Ahora</a>
+            <a href="tel:6047800790">Call Now</a>
           </Button>
         </div>
       )}
